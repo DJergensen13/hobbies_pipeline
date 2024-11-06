@@ -5,10 +5,10 @@ let app = new express();
 const knex = require("knex")({
  client: "mysql",
  connection: {
-  host:"concert-db-instance-1.c61dq6ysma4i.us-east-2.rds.amazonaws.com",
+  host:"hobbies-db-instance.c5s4wcso4zp0.us-east-2.rds.amazonaws.com",
   user: "admin",
-  password: "Password1",
-  database:"paradise-concerts",
+  password: "password1",
+  database:"hobbies",
   port: 3306,
  },
 });
@@ -16,7 +16,7 @@ const knex = require("knex")({
 app.get("/",(req,res) => {
  knex
  .select()
- .from("venues")
+ .from("hobbies")
  .then((result) => {
   console.log(result);
   res.send(result);

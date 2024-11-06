@@ -19,6 +19,7 @@ app.get("/",(req,res) => {
  .from("hobbies")
  .then((result) => {
   console.log(result);
+  console.log("Daxton");
   res.send(result);
  }); 
 });
